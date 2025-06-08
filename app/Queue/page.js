@@ -1,9 +1,10 @@
 import React from "react";
+import MyPage from "@/components/MyPage";
 
 export default function Queue() {
   return (
     <>
-      <h1>Queue Page</h1>
+      <MyPage title="Queue Page" />
     </>
   );
 }

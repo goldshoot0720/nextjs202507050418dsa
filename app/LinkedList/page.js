@@ -1,9 +1,10 @@
 import React from "react";
+import MyPage from "@/components/MyPage";
 
 export default function LinkedList() {
   return (
     <>
-      <h1>Linked List Page</h1>
+      <MyPage title="Linked List Page" />
     </>
   );
 }

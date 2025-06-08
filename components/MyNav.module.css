@@ -1,0 +1,7 @@
+.myLink {
+  background-color: lightskyblue;
+}
+
+.myLink:hover {
+  background-color: hotpink;
+}

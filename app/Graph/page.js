@@ -1,9 +1,10 @@
 import React from "react";
+import MyPage from "@/components/MyPage";
 
 export default function Graph() {
   return (
     <>
-      <h1>Graph Page</h1>
+      <MyPage title="Graph Page" />
     </>
   );
 }

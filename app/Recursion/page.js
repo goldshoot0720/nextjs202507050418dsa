@@ -1,9 +1,10 @@
 import React from "react";
+import MyPage from "@/components/MyPage";
 
 export default function Recursion() {
   return (
     <>
-      <h1>Recursion Page</h1>
+      <MyPage title="Recursion Page" />
     </>
   );
 }

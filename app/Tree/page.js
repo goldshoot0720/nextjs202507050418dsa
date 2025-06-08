@@ -1,9 +1,10 @@
 import React from "react";
+import MyPage from "@/components/MyPage";
 
 export default function Tree() {
   return (
     <>
-      <h1>Tree Page</h1>
+      <MyPage title="Tree Page" />
     </>
   );
 }

@@ -1,9 +1,10 @@
 import React from "react";
+import MyPage from "@/components/MyPage";
 
 export default function Array() {
   return (
     <>
-      <h1>Array Page</h1>
+      <MyPage title="Array Page" color="lightgreen" hover="lightblue" />
     </>
   );
 }

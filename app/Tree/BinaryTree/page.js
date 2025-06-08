@@ -1,9 +1,10 @@
 import React from "react";
+import MyPage from "@/components/MyPage";
 
 export default function BinaryTree() {
   return (
     <>
-      <h1>Binary Tree Page</h1>
+      <MyPage title="Binary Tree Page" />
     </>
   );
 }

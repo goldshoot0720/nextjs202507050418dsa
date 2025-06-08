@@ -1,0 +1,9 @@
+.title {
+  border: 3px solid;
+  display: inline-block;
+}
+
+.title:hover {
+  border: 9px solid;
+  display: inline-block;
+}

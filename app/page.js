@@ -1,9 +1,10 @@
 import React from "react";
+import MyPage from "@/components/MyPage";
 
 export default function Home() {
   return (
     <>
-      <h1>Home Page</h1>
+      <MyPage title="Home Page" color="lightblue" hover="lightgreen" />
     </>
   );
 }

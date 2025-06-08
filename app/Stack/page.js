@@ -1,9 +1,10 @@
 import React from "react";
+import MyPage from "@/components/MyPage";
 
 export default function Stack() {
   return (
     <>
-      <h1>Stack Page</h1>
+      <MyPage title="Stack Page" />
     </>
   );
 }
