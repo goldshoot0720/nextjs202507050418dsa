@@ -1,11 +1,10 @@
-"use client";
 import React from "react";
 import MyPage from "@/components/MyPage";
 
-export default function Home() {
+export default function Search() {
   return (
     <>
-      <MyPage title="Home Page" />
+      <MyPage title="Search Page" />
     </>
   );
 }

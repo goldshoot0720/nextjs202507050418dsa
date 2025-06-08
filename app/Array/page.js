@@ -4,7 +4,7 @@ import MyPage from "@/components/MyPage";
 export default function Array() {
   return (
     <>
-      <MyPage title="Array Page" color="lightgreen" hover="lightblue" />
+      <MyPage title="Array Page" />
     </>
   );
 }

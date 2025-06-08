@@ -42,64 +42,9 @@ export default function AdjacencyList() {
         }
       }
     }
-    bfs(startVertex) {
-      if (!this.AdjList[startVertex]) return "Start vertex not found";
-
-      let visited = new Set();
-      let queue = [startVertex];
-      let result = [];
-
-      visited.add(startVertex);
-
-      while (queue.length > 0) {
-        let vertex = queue.shift();
-        result.push(vertex);
-
-        for (let neighbor of this.AdjList[vertex]) {
-          if (!visited.has(neighbor.node)) {
-            visited.add(neighbor.node);
-            queue.push(neighbor.node);
-          }
-        }
-      }
-
-      return result.join(" -> ");
-    }
-    dfs(startVertex) {
-      if (!this.AdjList[startVertex]) return "Start vertex not found";
-
-      let visited = new Set();
-      let result = [];
-
-      const dfsHelper = (vertex) => {
-        visited.add(vertex);
-        result.push(vertex);
-
-        for (let neighbor of this.AdjList[vertex]) {
-          if (!visited.has(neighbor.node)) {
-            dfsHelper(neighbor.node);
-          }
-        }
-      };
-
-      dfsHelper(startVertex);
-      return result.join(" -> ");
-    }
-
-    TopologicalSort() {}
   }
 
   let graph = new Graph();
-  graph.addVertex("A");
-  graph.addVertex("B");
-  graph.addVertex("C");
-  graph.addVertex("D");
-  graph.addVertex("E");
-  graph.addEdge("A", "B", 1);
-  graph.addEdge("A", "C", 1);
-  graph.addEdge("B", "E", 1);
-  graph.addEdge("C", "D", 1);
-  graph.addEdge("D", "E", 1);
 
   return (
     <>
@@ -107,8 +52,6 @@ export default function AdjacencyList() {
       <h2>
         <pre>{graph.toString()}</pre>
       </h2>
-      <h2>BFS traversal: {graph.bfs("A")}</h2>
-      <h2>DFS traversal: {graph.dfs("A")}</h2>
     </>
   );
 }
