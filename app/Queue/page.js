@@ -1,9 +1,9 @@
 import React from "react";
 
-export default function Home() {
+export default function Queue() {
   return (
     <>
-      <h1>Home Page</h1>
+      <h1>Queue Page</h1>
     </>
   );
 }
