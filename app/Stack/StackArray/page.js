@@ -55,17 +55,19 @@ export default function StackArrayPage() {
   }
 
   function handleClickForPush() {
-    const newStack = new StackArray(stack.stack); // clone 現有 stack
-    newStack.push(inputValue);
-    setStack(newStack); // 這樣 reference 變了 → React 會 re-render
+    stack.push(inputValue);
     setInputValue("");
+
+    // Create a shallow clone to trigger React re-render
+    setStack(Object.assign(Object.create(Object.getPrototypeOf(stack)), stack));
   }
 
   function handleClickForPop() {
-    const newStack = new StackArray(stack.stack);
-    const value = newStack.pop();
-    setPopValue(value);
-    setStack(newStack);
+    const popped = stack.pop();
+    setPopValue(popped);
+
+    // Create a shallow clone to trigger React re-render
+    setStack(Object.assign(Object.create(Object.getPrototypeOf(stack)), stack));
   }
   return (
     <>

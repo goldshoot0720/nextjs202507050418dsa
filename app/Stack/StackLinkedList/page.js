@@ -2,22 +2,69 @@
 import React, { useState } from "react";
 import MyPage from "@/components/MyPage";
 
+class Node {
+  constructor(value) {
+    this.value = value;
+    this.next = null;
+  }
+}
+
 class StackLinkedList {
-  constructor() {}
+  constructor() {
+    this.head = null;
+    this.length = 0;
+  }
 
-  toLinkedListString() {}
+  toLinkedListString() {
+    let result = "";
+    let current = this.head;
+    while (current) {
+      result += current.value + " -> ";
+      current = current.next;
+    }
+    return result + "null";
+  }
 
-  toStackString() {}
+  toStackString() {
+    if (this.isEmpty()) return "\n︻\n︼";
+    let str = "";
+    let current = this.head;
+    while (current) {
+      str = str + "——\n" + current.value + "\n";
+      current = current.next;
+    }
+    str = "\n︻\n" + str + "——\n︼";
+    return str;
+  }
 
-  push(value) {}
+  push(value) {
+    if (value) {
+      const newNode = new Node(value);
+      newNode.next = this.head;
+      this.head = newNode;
+      this.length++;
+    }
+  }
 
-  pop() {}
+  pop() {
+    if (!this.head) return "null";
+    const value = this.head.value;
+    this.head = this.head.next;
+    this.length--;
+    return value;
+  }
 
-  size() {}
+  size() {
+    return this.length;
+  }
 
-  top() {}
+  top() {
+    return this.head ? this.head.value : "null";
+  }
 
-  isEmpty() {}
+  isEmpty() {
+    return this.length === 0;
+  }
 }
 
 export default function StackArrayPage() {
@@ -28,9 +75,21 @@ export default function StackArrayPage() {
     setInputValue(e.target.value);
   }
 
-  function handleClickForPush() {}
+  function handleClickForPush() {
+    stack.push(inputValue);
+    setInputValue("");
 
-  function handleClickForPop() {}
+    // Create a shallow clone to trigger React re-render
+    setStack(Object.assign(Object.create(Object.getPrototypeOf(stack)), stack));
+  }
+
+  function handleClickForPop() {
+    const popped = stack.pop();
+    setPopValue(popped);
+
+    // Create a shallow clone to trigger React re-render
+    setStack(Object.assign(Object.create(Object.getPrototypeOf(stack)), stack));
+  }
   return (
     <>
       <MyPage title="Stack Linked List Page" />
