@@ -3,12 +3,24 @@ import React, { useState } from "react";
 import MyPage from "@/components/MyPage";
 
 class StackArray {
-  constructor(stack = []) {
+  constructor(
+    stack = [
+      1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21,
+      22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37,
+    ]
+  ) {
     this.stack = [...stack];
   }
 
   toArrayString() {
-    return "[" + this.stack.join(",") + "]";
+    if (this.isEmpty()) return "\n[]";
+    let str = "\n[";
+    for (let i = 0; i < this.stack.length; i++) {
+      str = str + this.stack[i];
+      if (i != this.stack.length - 1) str = str + ",";
+      if (i !== 0 && i % 10 === 0) str = str + "\n";
+    }
+    return str + "]";
   }
 
   toStackString() {
@@ -99,9 +111,9 @@ export default function StackArrayPage() {
             {"\n"}
             size:{stack.size()}
             {"\n"}
-            toArrayString():{stack.toArrayString()}
+            Array:{stack.toArrayString()}
             {"\n"}
-            toStackString():{stack.toStackString()}
+            Stack:{stack.toStackString()}
             {"\n"}
           </pre>
         </h2>
